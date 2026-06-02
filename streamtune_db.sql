@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2026 at 08:44 AM
+-- Generation Time: Jun 02, 2026 at 11:49 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -39,10 +39,26 @@ CREATE TABLE `album` (
 --
 
 INSERT INTO `album` (`id_albuma`, `naslov`, `godina_izdanja`, `id_izvodjaca`) VALUES
-(1, 'Afrika', 1995, 1),
-(2, 'Judi, zviri i beštimje', 1999, 2),
-(3, 'Vojko', 2018, 3),
-(4, 'Dnevnik jedne ljubavi', 1973, 4);
+(1, 'Meow Back', 2024, 1),
+(2, '1989', 2014, 2),
+(3, 'Vrucina', 2020, 4),
+(4, 'Budenje', 1994, 4),
+(5, 'Afrika', 1995, 5),
+(6, 'After Hours', 2020, 6),
+(7, 'AM', 2013, 7),
+(8, 'Future Nostalgia', 2020, 8),
+(9, 'Appetite', 1987, 9),
+(10, 'Unca Fibre', 2006, 10),
+(11, 'Dvi tri rici', 2000, 11),
+(12, 'Meteora', 2003, 12),
+(13, 'Hit Me Hard', 2024, 13),
+(14, 'Crno bijeli svijet', 1980, 14),
+(15, 'Fine Line', 2019, 15),
+(16, 'Knjiga zalbi', 2007, 16),
+(17, 'Divide', 2017, 17),
+(18, 'Duk u klubu', 2012, 18),
+(19, 'Night at Opera', 1975, 19),
+(20, 'Utopia', 2025, 20);
 
 -- --------------------------------------------------------
 
@@ -61,10 +77,25 @@ CREATE TABLE `izvodjac` (
 --
 
 INSERT INTO `izvodjac` (`id_izvodjaca`, `ime`, `biografija`) VALUES
-(1, 'Dino Dvornik', 'Kralj funka'),
-(2, 'Gibonni', 'Kantautor iz Splita'),
-(3, 'Vojko V', 'Reper iz Klisa'),
-(4, 'Josipa Lisac', 'Glazbena diva');
+(1, 'Baby Lasagna', 'Eurovision 2024 star'),
+(2, 'Taylor Swift', 'Pop icon'),
+(4, 'Parni Valjak', 'Rock legends'),
+(5, 'Dino Dvornik', 'Funk King'),
+(6, 'The Weeknd', 'R&B Star'),
+(7, 'Arctic Monkeys', 'Indie Rock'),
+(8, 'Dua Lipa', 'Pop Star'),
+(9, 'Guns N Roses', 'Rock Giants'),
+(10, 'Gibonni', 'Singer-songwriter'),
+(11, 'Oliver Dragojevic', 'Dalmatian Legend'),
+(12, 'Linkin Park', 'Nu-metal kings'),
+(13, 'Billie Eilish', 'Alt-pop star'),
+(14, 'Prljavo Kazaliste', 'Rock legends'),
+(15, 'Harry Styles', 'Pop star'),
+(16, 'Hladno Pivo', 'Punk Rock'),
+(17, 'Ed Sheeran', 'Singer-songwriter'),
+(18, 'Severina', 'Regional pop star'),
+(19, 'Queen', 'Rock icons'),
+(20, 'Travis Scott', 'Trap star');
 
 -- --------------------------------------------------------
 
@@ -108,10 +139,19 @@ CREATE TABLE `pjesma` (
 --
 
 INSERT INTO `pjesma` (`id_pjesme`, `naslov`, `trajanje`, `id_albuma`, `id_zanra`) VALUES
-(1, 'Udri jače manijače', '00:03:55', 1, 1),
-(2, 'Činim pravu stvar', '00:04:20', 2, 2),
-(3, 'Ne može', '00:03:30', 3, 3),
-(4, 'O jednoj mladosti', '00:04:00', 4, 4);
+(1, 'Rim Tim Tagi Dim', '00:00:00', 1, 1),
+(2, 'Shake It Off', '00:02:19', 2, 1),
+(3, 'Ne moze', '00:02:05', 3, 3),
+(4, 'Zastave', '00:03:00', 4, 2),
+(5, 'Hipnotiziran', '00:02:25', 5, 4),
+(6, 'Blinding Lights', '00:02:00', 6, 4),
+(7, 'Do I Wanna Know', '00:00:00', 7, 2),
+(8, 'Levitating', '00:02:03', 8, 1),
+(9, 'Welcome Jungle', '00:00:00', 9, 8),
+(10, 'Oprosti', '00:00:00', 10, 1),
+(11, 'Cesarica', '00:00:00', 11, 1),
+(12, 'Numb', '00:00:00', 12, 8),
+(13, 'Birds of Feather', '00:02:10', 13, 1);
 
 -- --------------------------------------------------------
 
@@ -214,8 +254,14 @@ CREATE TABLE `zanr` (
 INSERT INTO `zanr` (`id_zanra`, `naziv`) VALUES
 (1, 'Pop'),
 (2, 'Rock'),
-(3, 'Hip-Hop'),
-(4, 'Jazz');
+(3, 'Trap'),
+(4, 'Electronic'),
+(5, 'Classic'),
+(6, 'Jazz'),
+(7, 'Hip Hop'),
+(8, 'Metal'),
+(9, 'Soul'),
+(10, 'Funk');
 
 --
 -- Indexes for dumped tables
@@ -277,13 +323,13 @@ ALTER TABLE `zanr`
 -- AUTO_INCREMENT for table `album`
 --
 ALTER TABLE `album`
-  MODIFY `id_albuma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_albuma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `izvodjac`
 --
 ALTER TABLE `izvodjac`
-  MODIFY `id_izvodjaca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_izvodjaca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `korisnik`
@@ -295,7 +341,7 @@ ALTER TABLE `korisnik`
 -- AUTO_INCREMENT for table `pjesma`
 --
 ALTER TABLE `pjesma`
-  MODIFY `id_pjesme` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_pjesme` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `playlista`
@@ -313,7 +359,7 @@ ALTER TABLE `pretplata`
 -- AUTO_INCREMENT for table `zanr`
 --
 ALTER TABLE `zanr`
-  MODIFY `id_zanra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_zanra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
